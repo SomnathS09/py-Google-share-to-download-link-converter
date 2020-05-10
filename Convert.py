@@ -1,12 +1,14 @@
-examList = []
-i = input("Enter all strings")
+downloadList = []
+i = input("Enter all share links:\n")
 
-while i != "":
-    examList.append(i.split())
-    i = input()
+downloadList.append(i.split())
+
+print("\nPrinting all the download links\n")
     
-#print(examList)
-
-for a in examList:
+for a in downloadList:
     for s in a:
+        if(len(s)<65):
+            print("Invalid share link, Please recheck")
+            continue
         print("https://drive.google.com/u/0/uc?id="+s[32:65]+"&export=download")
+
